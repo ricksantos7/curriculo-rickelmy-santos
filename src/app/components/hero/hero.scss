@@ -1,0 +1,50 @@
+@use '../../../style/mixins' as *;
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-lg);
+  padding: var(--space-xl) var(--space-lg);
+
+  @include tablet {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  &__avatar-wrapper {
+    flex-shrink: 0;
+  }
+
+ &__avatar {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;        // era var(--radius-md)
+  object-fit: cover;
+  border: 2px solid var(--accent);
+}
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  &__badge {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__nome {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+  }
+
+  &__bio {
+    color: var(--text-secondary);
+    max-width: 500px;
+    font-size: 1.05rem;
+  }
+}

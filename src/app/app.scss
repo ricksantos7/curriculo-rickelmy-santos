@@ -1,0 +1,23 @@
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+app-hero,
+app-skills,
+app-experiencia,
+app-contato {
+  display: block;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+app-hero        { animation-delay: 0s; }
+app-skills      { animation-delay: 0.15s; }
+app-experiencia { animation-delay: 0.3s; }
+app-contato     { animation-delay: 0.45s; }

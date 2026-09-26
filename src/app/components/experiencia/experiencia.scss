@@ -1,0 +1,59 @@
+.experiencia {
+  padding: var(--space-lg);
+
+  &__titulo {
+    font-size: 2rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  &__lista {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  &__card {                              // ← era ".card" (bloco separado)
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    box-shadow: var(--shadow-card);
+    border-left: 3px solid var(--accent);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+
+  &__card-periodo {                      // ← era "&__periodo"
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__card-cargo {                        // ← era "&__cargo"
+    font-size: 1.25rem;
+    margin-top: var(--space-xs);
+  }
+
+  &__card-empresa {                      // ← era "&__empresa"
+    color: var(--text-secondary);
+    margin-bottom: var(--space-sm);
+  }
+
+  &__card-lista {                        // ← era "&__lista" (dentro do .card)
+    color: var(--text-secondary);
+    padding-left: var(--space-md);
+
+    li {
+      margin-bottom: var(--space-xs);
+    }
+  }
+}

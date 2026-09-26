@@ -1,0 +1,111 @@
+@use '../../../style/mixins' as *;
+
+@keyframes progressoBarra {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--nivel);
+  }
+}
+
+.skills {
+  padding: var(--space-lg);
+
+  &__titulo {
+    font-size: 2rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  &__filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-lg);
+  }
+
+  &__filtro-btn {
+    padding: var(--space-xs) var(--space-md);
+    border: 1px solid var(--text-muted);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    &--ativo {
+      background: var(--accent);
+      color: var(--bg-primary);
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__card {
+    background: var(--bg-card);
+    border-radius: var(--radius-sm);
+    padding: var(--space-sm) var(--space-md);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+
+  &__card-nome {
+    display: block;
+    margin-bottom: var(--space-xs);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+  }
+
+  &__card-barra {
+    height: 6px;
+    background: var(--bg-secondary);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  &__card-progresso {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 999px;
+    width: var(--nivel);
+    animation: progressoBarra 0.8s ease-out forwards;
+  }
+
+  &__card-nivel {
+    display: block;
+    margin-top: var(--space-xs);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-align: right;
+  }
+
+  &__vazio {
+    color: var(--text-muted);
+  }
+}

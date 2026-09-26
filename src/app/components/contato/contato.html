@@ -1,0 +1,20 @@
+<footer class="contato">
+  <h2 class="contato__titulo">Vamos conversar?</h2>
+
+  <div class="contato__links">
+    <a class="contato__link" [href]="'mailto:' + email">📧 E-mail</a>
+    <a class="contato__link" [href]="'tel:+55' + telefone" >📱 {{ telefone }}</a>
+    <a class="contato__link" [href]="github" target="_blank" rel="noopener">💻 GitHub</a>
+    <a class="contato__link" [href]="linkedin" target="_blank" rel="noopener">🔗 LinkedIn</a>
+  </div>
+
+  <button class="contato__copiar-btn" (click)="copiarEmail()">
+    @if (copiado()) {
+      <span>✓ Copiado!</span>
+    } @else {
+      <span>📋 Copiar e-mail</span>
+    }
+  </button>
+
+  <p class="contato__rodape">© 2026 Rickelmy Santos</p>
+</footer>

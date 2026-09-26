@@ -1,0 +1,69 @@
+
+@use './style/mixins' as *;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// ===== DESIGN TOKENS =====
+:root {
+  // Cores — fundo
+  --bg-primary: #0a0e1a;
+  --bg-secondary: #12172b;
+  --bg-card: #161c33;
+
+  // Cores — texto
+  --text-primary: #f5f7fa;
+  --text-secondary: #a0a8c0;
+  --text-muted: #6b7290;
+
+  // Cor de destaque
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+
+  // Tipografia
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  // Espaçamento (escala consistente)
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+
+  // Bordas
+  --radius-sm: 8px;
+  --radius-md: 16px;
+
+  // Sombras
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+}
+
+// ===== ESTILOS BASE =====
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}

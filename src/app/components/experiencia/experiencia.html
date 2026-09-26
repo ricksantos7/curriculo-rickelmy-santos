@@ -1,0 +1,21 @@
+<section class="experiencia">
+  <h2 class="experiencia__titulo">Trajetória</h2>
+
+  <div class="experiencia__lista">
+    @for (item of itens(); track item.id) {
+      <article class="experiencia__card">
+        <span class="experiencia__card-periodo">{{ item.periodo }}</span>
+        <h3 class="experiencia__card-cargo">{{ item.cargo }}</h3>
+        <p class="experiencia__card-empresa">{{ item.empresa }}</p>
+
+        @if (item.descricao.length > 0) {
+          <ul class="experiencia__card-lista">
+            @for (linha of item.descricao; track linha) {
+              <li>{{ linha }}</li>
+            }
+          </ul>
+        }
+      </article>
+    }
+  </div>
+</section>

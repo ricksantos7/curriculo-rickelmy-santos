@@ -1,0 +1,31 @@
+<section class="skills">
+  <h2 class="skills__titulo">Habilidades</h2>
+
+  <div class="skills__filtros">
+    @for (cat of categorias(); track cat) {
+      <button
+        class="skills__filtro-btn"
+        [class.skills__filtro-btn--ativo]="filtroAtivo() === cat"
+        (click)="setFiltro(cat)">
+        {{ cat }}
+      </button>
+    }
+  </div>
+
+  <div class="skills__grid">
+    @for (skill of skillsFiltradas(); track skill.nome) {
+      <div class="skills__card">
+        <span class="skills__card-nome">{{ skill.nome }}</span>
+        <div class="skills__card-barra">
+          <div
+            class="skills__card-progresso"
+            [style.--nivel.%]="skill.nivel">
+          </div>
+        </div>
+        <span class="skills__card-nivel">{{ skill.nivel }}%</span>
+      </div>
+    } @empty {
+      <p class="skills__vazio">Nenhuma skill encontrada nessa categoria.</p>
+    }
+  </div>
+</section>
